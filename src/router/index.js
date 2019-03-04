@@ -3,7 +3,7 @@ import Router from 'vue-router'
 
 const Home = resolve => require(['@/page/index/home'], resolve) 
 const SearchBox = resolve => require(['@/page/index/components/searchBox'], resolve) 
-const Carousel = resolve => require(['@/page/index/components/carousel'], resolve) 
+const Menu = resolve => require(['@/page/index/components/menu'], resolve) 
 const Header = resolve => require(['@/components/Header'], resolve) 
 
 Vue.use(Router)
@@ -21,7 +21,7 @@ export default new Router({
       path: '/',
       components: {
         'searchBox': SearchBox,
-        'carousel':Carousel
+        'menu':Menu
       },
     }]
   }]

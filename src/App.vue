@@ -12,5 +12,7 @@ export default {
 </script>
 
 <style lang='scss'>
-
+ul,li{
+  list-style: none
+}
 </style>
