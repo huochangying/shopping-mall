@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/page/home'
-import Header from '@/components/Header'
+
+const Home = resolve => require(['@/page/index/home'], resolve) 
+const SearchBox = resolve => require(['@/page/index/components/searchBox'], resolve) 
+const Carousel = resolve => require(['@/page/index/components/carousel'], resolve) 
+const Header = resolve => require(['@/components/Header'], resolve) 
 
 Vue.use(Router)
 
@@ -11,7 +14,15 @@ export default new Router({
     path: '/',
     components: {
       'home': Home,
-      'header': Header
-    }
+      'header': Header,
+      'searchBox': SearchBox
+    },
+    children: [{
+      path: '/',
+      components: {
+        'searchBox': SearchBox,
+        'carousel':Carousel
+      },
+    }]
   }]
 })
