@@ -1,12 +1,12 @@
 <template>
   <div>
-    <router-view name='searchBox'></router-view>
-    <router-view name='menu'></router-view>
+    <router-view name="searchBox"></router-view>
+    <router-view name="menu"></router-view>
+    1123132
   </div>
 </template>
 <script>
-export default {
-}
+export default {};
 </script>
 <style lang='scss'>
 $color: #c30000 !important;

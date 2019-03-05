@@ -12,7 +12,11 @@ export default {
 </script>
 
 <style lang='scss'>
-ul,li{
-  list-style: none
+ul,
+li {
+  list-style: none;
+}
+.float {
+  float: left;
 }
 </style>
