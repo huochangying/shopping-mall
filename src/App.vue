@@ -19,4 +19,7 @@ li {
 .float {
   float: left;
 }
+.ivu-card{
+  border-radius: 0;
+}
 </style>

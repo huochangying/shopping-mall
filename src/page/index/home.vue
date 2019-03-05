@@ -2,7 +2,7 @@
   <div>
     <router-view name="searchBox"></router-view>
     <router-view name="menu"></router-view>
-    1123132
+    <router-view name="card"></router-view>
   </div>
 </template>
 <script>
