@@ -22,4 +22,8 @@ li {
 .ivu-card{
   border-radius: 0;
 }
+.ivu-tabs-bar{
+  border-bottom: none;
+  margin-bottom:0
+}
 </style>

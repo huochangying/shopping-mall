@@ -1,7 +1,7 @@
 <template>
   <div class="menu">
     <Row class="background">
-      <Col :lg="{span:18,offset:3}" :md="{span:24}">
+      <Col :lg="{span:18,offset:3}" :md="{span:24}" class='min-width'>
         <div class="all-kinds">
           <h2>全部商品分类</h2>
           <ul class="nav-side">
@@ -52,6 +52,9 @@ export default {
 $color: #2d8800;
 $color-two: #3a9900;
 .menu {
+  .min-width{
+    min-width: 1010px;
+  }
   .background {
     background: url("../../../assets/timg.jpg") center 46px no-repeat;
   }

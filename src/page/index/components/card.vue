@@ -33,7 +33,18 @@
           </Card>
           <img src="../../../assets/shuiguo.jpg" alt>
         </div>
-        <div class="right float"></div>
+        <div class="right float">
+          <Tabs value="tab-1" class="tab-one">
+            <TabPane label="精选推荐" name="tab-1">
+              <div>
+                <card-template></card-template> 
+              </div>
+            </TabPane>
+            <TabPane label="热卖推荐" name="tab-2">
+              <div></div>
+            </TabPane>
+          </Tabs>
+        </div>
       </Col>
     </Row>
   </div>
@@ -50,6 +61,7 @@ export default {
 
 <style lang="scss" scoped>
 $color: #bee77b;
+
 .card-box {
   padding: {
     top: 15px;
@@ -105,7 +117,6 @@ h3 {
   font-size: 20px;
   line-height: 38px;
   position: relative;
-  border-bottom: 1px solid $color;
   i {
     position: absolute;
     left: 0;
@@ -113,6 +124,29 @@ h3 {
     width: 5px;
     height: 20px;
     background: $color;
+  }
+}
+</style>
+<style lang="scss">
+$color: #bee77b;
+.tab-one {
+  .ivu-tabs-nav .ivu-tabs-tab:hover {
+    color: $color;
+  }
+  .ivu-tabs-nav-container:focus .ivu-tabs-tab-focused {
+    border-color: $color !important;
+  }
+  .ivu-tabs-nav .ivu-tabs-tab-active {
+    color: $color;
+  }
+  .ivu-tabs-ink-bar {
+    background-color: $color;
+  }
+  .ivu-tabs-nav .ivu-tabs-tab {
+    padding: 10px 16px;
+  }
+  .ivu-tabs-nav {
+    margin-left: 30px;
   }
 }
 </style>

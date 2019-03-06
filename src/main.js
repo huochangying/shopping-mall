@@ -9,7 +9,13 @@ import store from './store'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 
+import CardTemplate from '@/components/cardTemplate'
+
+
 Vue.config.productionTip = false
+
+//全局组件
+Vue.component('card-template', CardTemplate)
 
 Vue.use(iView, {
   size: 'large'
