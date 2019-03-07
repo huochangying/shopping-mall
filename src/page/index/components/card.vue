@@ -1,7 +1,7 @@
 <template>
   <div class="card-box">
     <Row>
-      <Col :lg="{span:18,offset:3}" :md="{span:24}">
+      <Col :lg="{span:18,offset:3}" :md="{span:24}" class="card-width">
         <div class="left float">
           <h3>
             <i></i>
@@ -36,8 +36,15 @@
         <div class="right float">
           <Tabs value="tab-1" class="tab-one">
             <TabPane label="精选推荐" name="tab-1">
-              <div>
-                <card-template></card-template> 
+              <div class="template">
+                <card-template></card-template>
+                <card-template></card-template>
+                <card-template></card-template>
+                <card-template></card-template>
+                <card-template></card-template>
+                <card-template></card-template>
+                <card-template></card-template>
+                <card-template></card-template>
               </div>
             </TabPane>
             <TabPane label="热卖推荐" name="tab-2">
@@ -54,14 +61,18 @@
 export default {
   name: "",
   data() {
-    return {};
+    return {
+      
+    };
   }
 };
 </script>
 
 <style lang="scss" scoped>
 $color: #bee77b;
-
+.card-width {
+  min-width: 1250px;
+}
 .card-box {
   padding: {
     top: 15px;
@@ -107,6 +118,13 @@ $color: #bee77b;
           top: 12px;
         }
       }
+    }
+  }
+  .right {
+    width: 970px;
+    .template {
+      border-top: 1px solid $color;
+      overflow: hidden;
     }
   }
 }
