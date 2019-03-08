@@ -37,14 +37,7 @@
           <Tabs value="tab-1" class="tab-one">
             <TabPane label="精选推荐" name="tab-1">
               <div class="template">
-                <card-template></card-template>
-                <card-template></card-template>
-                <card-template></card-template>
-                <card-template></card-template>
-                <card-template></card-template>
-                <card-template></card-template>
-                <card-template></card-template>
-                <card-template></card-template>
+                <card-template v-for='(item,index) in card' :sendCard='item' :key='index'></card-template>
               </div>
             </TabPane>
             <TabPane label="热卖推荐" name="tab-2">
@@ -62,7 +55,48 @@ export default {
   name: "",
   data() {
     return {
-      
+      card: [
+        {
+          img: require("../../../assets/card-1.jpg"),
+          title: "【预售】一级 无籽褚柑箱装10斤 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-2.jpg"),
+          title: "【预售】一级 桔子 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-3.jpg"),
+          title: "【预售】一级 草莓箱装10斤 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-1.jpg"),
+          title: "【预售】一级 无籽褚柑箱装10斤 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-2.jpg"),
+          title: "【预售】一级 桔子箱装10斤 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-3.jpg"),
+          title: "【预售】一级 草莓柑箱装10斤 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-1.jpg"),
+          title: "【预售】一级 无籽褚柑箱装10斤 预计3月16日前发货",
+          money: "68"
+        },
+        {
+          img: require("../../../assets/card-2.jpg"),
+          title: "【预售】一级 桔子箱装10斤 预计3月16日前发货",
+          money: "68"
+        }
+      ]
     };
   }
 };

@@ -1,10 +1,11 @@
 <template>
   <div class="float">
-    <div class="small-card ">
-      <img src="../assets/card-1.jpg" alt>
-      <div class="title">【预售】一级 无籽褚柑箱装10斤 预计3月16日前发货</div>
-      <div class="count">￥
-        <span>68</span>
+    <div class="small-card">
+      <img :src='sendCard.img' alt>
+      <div class="title">{{sendCard.title}}</div>
+      <div class="count">
+        ￥
+        <span>{{sendCard.money}}</span>
       </div>
     </div>
   </div>
@@ -15,6 +16,11 @@ export default {
   name: "",
   data() {
     return {};
+  },
+  props: {
+    sendCard: {
+      type: Object
+    }
   }
 };
 </script>
@@ -24,8 +30,8 @@ export default {
   width: 242.5px;
   height: 262px;
   overflow: hidden;
-  border-right:1px solid #ededed;
-  border-bottom:1px solid #ededed;
+  border-right: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
   img {
     width: 180px;
     margin: 6px auto 0 auto;
@@ -47,9 +53,9 @@ export default {
     color: #dd0800;
     width: 200px;
     margin: auto;
-    span{
-        font-size: 20px;
-        font-weight: bold
+    span {
+      font-size: 20px;
+      font-weight: bold;
     }
   }
 }
