@@ -5,7 +5,7 @@ const Home = resolve => require(['@/page/index/home'], resolve)
 const SearchBox = resolve => require(['@/page/index/children/searchBox'], resolve)
 const Carousel = resolve => require(['@/page/index/children/navBar/children/carousel'], resolve)
 const Card = resolve => require(['@/page/index/children/card'], resolve)
-const Menu = resolve => require(['@/page/index/children/nav/menu'], resolve)
+const Menu = resolve => require(['@/page/index/children/navBar/menu'], resolve)
 const Header = resolve => require(['@/components/Header'], resolve)
 
 Vue.use(Router)

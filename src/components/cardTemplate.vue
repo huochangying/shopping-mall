@@ -1,7 +1,7 @@
 <template>
   <div class="float">
     <div class="small-card">
-      <img :src='sendCard.img' alt>
+      <img :src="sendCard.img" alt>
       <div class="title">{{sendCard.title}}</div>
       <div class="count">
         ￥
@@ -32,10 +32,15 @@ export default {
   overflow: hidden;
   border-right: 1px solid #ededed;
   border-bottom: 1px solid #ededed;
+  cursor: pointer;
+  &:hover img{
+    transform: scale(0.8);
+  }
   img {
     width: 180px;
     margin: 6px auto 0 auto;
     display: block;
+    transition: 0.5;
   }
   .title {
     text-align: center;

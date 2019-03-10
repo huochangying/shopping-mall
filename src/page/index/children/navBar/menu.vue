@@ -56,7 +56,7 @@ $color-two: #3a9900;
     min-width: 1010px;
   }
   .background {
-    background: url("../../../assets/timg.jpg") center 46px no-repeat;
+    background: url("../../../../assets/timg.jpg") center 46px no-repeat;
   }
   margin: {
     bottom: 450px;

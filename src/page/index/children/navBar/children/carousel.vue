@@ -3,17 +3,17 @@
     <Carousel autoplay v-model="value2" loop class="carousel-box">
       <CarouselItem>
         <div>
-          <img src="../../../assets/1.jpg" alt>
+          <img src="@/assets/1.jpg" alt>
         </div>
       </CarouselItem>
       <CarouselItem>
         <div>
-          <img src="../../../assets/2.jpg" alt>
+          <img src="@/assets/2.jpg" alt>
         </div>
       </CarouselItem>
       <CarouselItem>
         <div>
-          <img src="../../../assets/3.jpg" alt>
+          <img src="@/assets/3.jpg" alt>
         </div>
       </CarouselItem>
     </Carousel>
