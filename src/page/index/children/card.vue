@@ -5,7 +5,7 @@
         <div class="left float">
           <h3>
             <i :style="{background:cardData.color}"></i>
-            时令果蔬
+            {{cardData.title}}
           </h3>
           <Card shadow class="left-card" :style="{background:cardData.colorBg}">
             <div class="triangle" :style="{borderBottom: '45px solid '+cardData.color}"></div>
@@ -135,7 +135,7 @@ h3 {
 }
 </style>
 <style lang="scss">
-$color: red;
+$color: #FDA421;
 .tab-one {
   .ivu-tabs-nav .ivu-tabs-tab:hover {
     color: $color;

@@ -1,7 +1,7 @@
 <template>
-  <div class="menu">
-    <Row class="background">
-      <Col :lg="{span:18,offset:3}" :md="{span:24}" class='min-width'>
+  <div class="menu" :style="{marginBottom:height?'450px':''}">
+    <Row :class="['background', !height?'slide':'']" :style="{height:height?'496px':''}">
+      <Col :lg="{span:18,offset:3}" :md="{span:24}" class="min-width">
         <div class="all-kinds">
           <h2>全部商品分类</h2>
           <ul class="nav-side">
@@ -12,7 +12,7 @@
               :key="index"
             >
               <Icon :type="item.icon" size="14" class="nav-side-icon"/>
-              <span class="nav-side-item">{{item.option}}</span>
+              <span class="nav-side-item"><router-link to='/productList'>{{item.option}}</router-link></span>
               <div class="menu-item">
                 <ul>
                   <li v-for="(item,index) in item.menus" :key="index">
@@ -35,6 +35,11 @@ export default {
   data() {
     return {};
   },
+  props: {
+    height: {
+      type: String
+    }
+  },
   computed: {
     ...mapState(["menu"])
   },
@@ -52,14 +57,25 @@ export default {
 $color: #2d8800;
 $color-two: #3a9900;
 .menu {
-  .min-width{
+  .slide {
+    .nav-side {
+      height: 0 !important;
+      padding:0 !important;
+      transition: 0.5s;
+      overflow: hidden;
+    }
+    &:hover .nav-side {
+      height: 450px !important;
+      padding: 12px 0 28px 0 !important;
+      transition: 0.5s;
+      overflow: visible;
+    }
+  }
+  .min-width {
     min-width: 1010px;
   }
   .background {
-    background: url("../../../../assets/timg.jpg") center 46px no-repeat;
-  }
-  margin: {
-    bottom: 450px;
+    background: url("../assets/timg.jpg") center 46px no-repeat;
   }
   font-family: "微软雅黑";
   height: 46px;
@@ -80,6 +96,9 @@ $color-two: #3a9900;
     ul.nav-side {
       padding: 12px 0 28px 0;
       height: 450px;
+      position: absolute;
+      background: $color-two;
+      width: 210px;
       > li {
         padding: 0 20px;
         font-size: 14px;
@@ -110,7 +129,7 @@ $color-two: #3a9900;
     border-bottom: 2px solid $color-two;
     position: absolute;
     left: 210px;
-    top: 46px;
+    top: 0px;
     color: #606060;
     li {
       height: 40px;
