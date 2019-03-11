@@ -1,8 +1,8 @@
 <template>
   <div class="menu" :style="{marginBottom:height?'450px':''}">
-    <Row :class="['background', !height?'slide':'']" :style="{height:height?'496px':''}">
+    <Row class="background" :style="{height:height?'496px':''}">
       <Col :lg="{span:18,offset:3}" :md="{span:24}" class="min-width">
-        <div class="all-kinds">
+        <div :class="['all-kinds', !height?'slide':'']">
           <h2>全部商品分类</h2>
           <ul class="nav-side">
             <li
@@ -12,12 +12,12 @@
               :key="index"
             >
               <Icon :type="item.icon" size="14" class="nav-side-icon"/>
-              <span class="nav-side-item"><router-link to='/productList'>{{item.option}}</router-link></span>
+              <span class="nav-side-item" @click="goList">{{item.option}}</span>
               <div class="menu-item">
                 <ul>
                   <li v-for="(item,index) in item.menus" :key="index">
                     <h4>{{item.title}}</h4>
-                    <span v-for="(item,index) in item.tags" :key="index">{{item}}</span>
+                    <span v-for="(item,index) in item.tags" :key="index" @click="goList">{{item}}</span>
                   </li>
                 </ul>
               </div>
@@ -49,6 +49,9 @@ export default {
     },
     hideItem() {
       this.showHide = false;
+    },
+    goList() {
+      this.$router.push("/productList");
     }
   }
 };
@@ -60,15 +63,19 @@ $color-two: #3a9900;
   .slide {
     .nav-side {
       height: 0 !important;
-      padding:0 !important;
-      transition: 0.5s;
+      padding: 0 !important;
       overflow: hidden;
+      transition: 0.3s;
+      &:hover {
+        transition: 0s;
+        height: 450px !important;
+        padding: 12px 0 28px 0 !important;
+        overflow: visible
+      }
     }
-    &:hover .nav-side {
+    h2:hover + .nav-side {
       height: 450px !important;
       padding: 12px 0 28px 0 !important;
-      transition: 0.5s;
-      overflow: visible;
     }
   }
   .min-width {

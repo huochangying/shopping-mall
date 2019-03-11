@@ -3,7 +3,7 @@
     <Row>
       <Col :lg="{span:18,offset:3}" :md="{span:24}" class>
         <div class="search-container">
-          <div class="name">SHOPPING</div>
+          <div class="name cursor" @click="goHome">SHOPPING</div>
           <div class="search">
             <Input search enter-button="搜 索" placeholder=" 狂欢周 满199减100"/>
           </div>
@@ -14,7 +14,13 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods:{
+    goHome(){
+      this.$router.push('/')
+    }
+  }
+};
 </script>
 <style lang='scss' scoped>
 .search-box {

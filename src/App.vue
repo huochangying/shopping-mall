@@ -20,6 +20,9 @@ li {
 .float {
   float: left;
 }
+.cursor{
+  cursor: pointer;
+}
 .ivu-card {
   border-radius: 0;
 }
