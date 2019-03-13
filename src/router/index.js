@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import {
-  list
-} from 'postcss';
+// import {
+//   list
+// } from 'postcss'
 
 const Home = resolve => require(['@/page/index/home'], resolve)
 const SearchBox = resolve => require(['@/components/searchBox'], resolve)
@@ -21,7 +21,7 @@ export default new Router({
     path: '/',
     components: {
       default: Home,
-      'header': Header,
+      'header': Header
     },
     children: [{
       path: '',
@@ -34,7 +34,7 @@ export default new Router({
         path: '',
         components: {
           'carousel': Carousel
-        },
+        }
       }]
     }]
   }, {
