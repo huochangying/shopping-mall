@@ -27,8 +27,8 @@ li {
   border-radius: 0;
 }
 .ivu-tabs-bar {
-  border-bottom: none;
-  margin-bottom: 0;
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
 }
 .footer {
   color: #c30000;

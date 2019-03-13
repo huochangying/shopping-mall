@@ -2,6 +2,7 @@
   <div>
     <router-view name="searchBox"></router-view>
     <router-view name="menu"></router-view>
+    <router-view></router-view>
   </div>
 </template>
 

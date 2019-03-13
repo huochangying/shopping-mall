@@ -70,7 +70,7 @@ $color-two: #3a9900;
         transition: 0s;
         height: 450px !important;
         padding: 12px 0 28px 0 !important;
-        overflow: visible
+        overflow: visible;
       }
     }
     h2:hover + .nav-side {
@@ -82,7 +82,7 @@ $color-two: #3a9900;
     min-width: 1010px;
   }
   .background {
-    background: url("../assets/timg.jpg") center 46px no-repeat;
+    background: url("../assets/img/timg.jpg") center 46px no-repeat;
   }
   font-family: "微软雅黑";
   height: 46px;
@@ -93,6 +93,7 @@ $color-two: #3a9900;
     color: #ffffff;
     width: 210px;
     float: left;
+    z-index: 12;
     h2 {
       font-size: 16px;
       line-height: 46px;

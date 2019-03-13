@@ -7,7 +7,8 @@ import store from './store'
 
 //  iview
 import iView from 'iview'
-import 'iview/dist/styles/iview.css'
+// import 'iview/dist/styles/iview.css'
+import '@/assets/css/iview.less'
 
 //components
 import CardTemplate from '@/components/cardTemplate'

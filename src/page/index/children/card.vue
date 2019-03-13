@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss" scoped>
 .card-width {
-  width: 1250px;
+  width: 1215px;
   margin: auto;
 }
 .card-box {

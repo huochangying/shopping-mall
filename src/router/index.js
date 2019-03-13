@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {
+  list
+} from 'postcss';
 
 const Home = resolve => require(['@/page/index/home'], resolve)
 const SearchBox = resolve => require(['@/components/searchBox'], resolve)
@@ -7,7 +10,8 @@ const Carousel = resolve => require(['@/components/carousel'], resolve)
 const Card = resolve => require(['@/page/index/children/card'], resolve)
 const Menu = resolve => require(['@/components/menu'], resolve)
 const Header = resolve => require(['@/components/Header'], resolve)
-const ProductList = resolve => require(['@/page/productList'], resolve)
+const Product = resolve => require(['@/page/product/product'], resolve)
+const List = resolve => require(['@/page/product/list/list'], resolve)
 
 Vue.use(Router)
 
@@ -36,14 +40,15 @@ export default new Router({
   }, {
     path: '/productList',
     components: {
-      default: ProductList,
+      default: Product,
       'header': Header
     },
     children: [{
       path: '',
       components: {
         'searchBox': SearchBox,
-        'menu': Menu
+        'menu': Menu,
+        default: List
       }
     }]
   }]
