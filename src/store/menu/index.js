@@ -6,16 +6,14 @@ const state = {
   menu: ''
 };
 const mutations = {
-  commitMenu(state, value) {
-    state.menu = value.menu
-  }
+  
 };
 const actions = {
   getMenu({
     commit
   }) {
     request('GET', 'menu').then(res => {
-      commit('commitMenu', res)
+      state.menu = res.menu
     })
   }
 };
