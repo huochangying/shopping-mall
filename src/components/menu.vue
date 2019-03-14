@@ -30,19 +30,15 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import axios from "axios";
 export default {
   data() {
     return {
-      menu: ""
     };
   },
   created() {
-    console.log(this.getMenu());
-    this.getMenu().then(res => {
-      console.log(res);
-    });
+    this.getMenu();
   },
   props: {
     height: {
@@ -50,6 +46,9 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      menu: state => state.Menu.menu
+    })
   },
   methods: {
     ...mapActions(["getMenu"]),

@@ -1,14 +1,22 @@
-import request from '../../utils/request'
+import {
+  request
+} from '../../utils/request'
 
 const state = {
-
+  menu: ''
 };
 const mutations = {
-
+  commitMenu(state, value) {
+    state.menu = value.menu
+  }
 };
 const actions = {
-  getMenu() {
-    request('GET', 'menu')
+  getMenu({
+    commit
+  }) {
+    request('GET', 'menu').then(res => {
+      commit('commitMenu', res)
+    })
   }
 };
 const getters = {

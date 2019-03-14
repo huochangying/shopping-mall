@@ -29,4 +29,4 @@ let request = async (type = 'GET', url = '', data = {}) => {
   return result
 }
 
-export default request
+export {request}
