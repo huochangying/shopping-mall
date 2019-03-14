@@ -5,7 +5,7 @@ Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://localhost:8080/static'
 
 const apiUrl = {
-  "menu": "munu.json"
+  "menu": "menu.json"
 }
 
 let request = async (type = 'GET', url = '', data = {}) => {
@@ -19,6 +19,7 @@ let request = async (type = 'GET', url = '', data = {}) => {
       .then(res => {
         result = res.data
       })
+
   } else if (type === 'POST') {
     await axios.post(url, JSON.stringify(data))
       .then(res => {
