@@ -31,7 +31,7 @@
               </li>
             </ul>
           </Card>
-          <img :src="cardData.bgImg" alt>
+          <img :src="receiveImg(cardData.bgImg)" alt>
         </div>
         <div class="right float">
           <Tabs value="tab-1" class="tab-one">
@@ -51,12 +51,16 @@
 </template>
 
 <script>
+import cache from '@/utils/cache'
 export default {
   name: "",
   props: {
     cardData: {
       type: Object
     }
+  },
+  methods: {
+    receiveImg: img => cache.getImgUrl(img)
   }
 };
 </script>
@@ -135,7 +139,7 @@ h3 {
 }
 </style>
 <style lang="scss">
-$color: #FDA421;
+$color: #fda421;
 .tab-one {
   .ivu-tabs-nav .ivu-tabs-tab:hover {
     color: $color;

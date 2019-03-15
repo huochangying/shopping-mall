@@ -24,7 +24,7 @@
         <span class="welcome">hi，欢迎来到 shopping-mall !</span>
       </Col>
       <Col :lg="{span:9}" :md="{span:12}" class="right nav-content">
-        <span class='cart'>
+        <span class="cart">
           <Icon type="md-cart" color="#2d8800" size="15" class="icon"/>购物车
         </span>
         <span class="welcome login">登录</span>
@@ -35,18 +35,23 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations,mapActions } from "vuex";
 export default {
   data() {
     return {};
   },
+  created() {
+    this.getCity();
+  },
   computed: {
-    ...mapState(["city", "cityArr"])
+    ...mapState({
+      city: state => state.Header.city,
+      cityArr: state => state.Header.cityArr
+    })
   },
   methods: {
-    changeCity(city) {
-      this.$store.state.city = city;
-    }
+    ...mapActions(["getCity"]),
+    ...mapMutations(["changeCity"]),
   }
 };
 </script>
@@ -94,7 +99,7 @@ $color: #2d8800;
   .register {
     @extend .login;
   }
-  .cart{
+  .cart {
     @extend .login;
   }
 }

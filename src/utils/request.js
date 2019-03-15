@@ -5,7 +5,9 @@ Vue.prototype.$http = axios
 axios.defaults.baseURL = 'http://localhost:8080/static'
 
 const apiUrl = {
-  "menu": "menu.json"
+  "menu": "menu.json",
+  "city": "city.json",
+  "card": "card.json",
 }
 
 let request = async (type = 'GET', url = '', data = {}) => {
@@ -29,4 +31,6 @@ let request = async (type = 'GET', url = '', data = {}) => {
   return result
 }
 
-export {request}
+export {
+  request
+}

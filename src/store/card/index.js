@@ -3,19 +3,19 @@ import {
 } from '../../utils/request'
 
 const state = {
-  menu: ''
+  card: [],
 };
 const mutations = {
-  getMenus(state, value) {
-    state.menu = value
+  getCards(state, value) {
+    state.card = value
   }
 };
 const actions = {
-  async getMenu({
+  async getCard({
     commit
   }) {
-    await request('GET', 'menu').then(res => {
-      commit('getMenus', res.menu)
+    await request('GET', 'card').then(res => {
+      commit('getCards', res)
     })
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <div class="float">
     <div class="small-card">
-      <img :src="sendCard.img" alt>
+      <img :src="receiveImg(sendCard.img)" alt>
       <div class="title">{{sendCard.title}}</div>
       <div class="count">
         ￥
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import cache from '@/utils/cache'
 export default {
   name: "",
   data() {
@@ -21,6 +22,9 @@ export default {
     sendCard: {
       type: Object
     }
+  },
+  methods:{
+    receiveImg: img => cache.getImgUrl(img)
   }
 };
 </script>
