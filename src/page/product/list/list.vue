@@ -12,65 +12,24 @@
           <div class="float">评论数</div>
           <Page :current="1" :total="10" simple class="right"/>
         </div>
-        <div class="list">
-          <div class="card">
+        <Row class="list">
+          <Col class="card" :md="{span:6}">
             <img src="../../../assets/img/binggan-1.jpg" alt>
-            <div>
+            <div class="price">
               ￥
               <span>66</span>
             </div>
-            <div>
+            <div class="title">
               <a href="#">【中粮海外直采】Bourbon波路梦黄油味饼干52g（日本进口 盒）</a>
             </div>
-            <div>
-              <span class="float">已评价 88</span>
+            <div class="bottom">
+              <span class="float">已评价
+                <span class="count">88</span>
+              </span>
               <span class="right">加入购物车</span>
             </div>
-          </div>
-
-          <div class="card">
-            <img src="../../../assets/img/binggan-1.jpg" alt>
-            <div>
-              ￥
-              <span>66</span>
-            </div>
-            <div>
-              <a href="#">【中粮海外直采】Bourbon波路梦黄油味饼干52g（日本进口 盒）</a>
-            </div>
-            <div>
-              <span class="float">已评价 88</span>
-              <span class="right">加入购物车</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../../../assets/img/binggan-1.jpg" alt>
-            <div>
-              ￥
-              <span>66</span>
-            </div>
-            <div>
-              <a href="#">【中粮海外直采】Bourbon波路梦黄油味饼干52g（日本进口 盒）</a>
-            </div>
-            <div>
-              <span class="float">已评价 88</span>
-              <span class="right">加入购物车</span>
-            </div>
-          </div>
-          <div class="card">
-            <img src="../../../assets/img/binggan-1.jpg" alt>
-            <div>
-              ￥
-              <span>66</span>
-            </div>
-            <div>
-              <a href="#">【中粮海外直采】Bourbon波路梦黄油味饼干52g（日本进口 盒）</a>
-            </div>
-            <div>
-              <span class="float">已评价 88</span>
-              <span class="right">加入购物车</span>
-            </div>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </Col>
     </Row>
   </div>
@@ -86,7 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color:#43a400;
+$color: #43a400;
 .m-30 {
   margin: {
     top: 15px;
@@ -108,26 +67,55 @@ $color:#43a400;
     cursor: pointer;
     &:hover {
       position: relative;
-      color: #43a400;
-      border-color: #43a400;
+      color: $color;
+      border-color: $color;
     }
   }
 }
 .list {
-  min-width: 1215px;
   margin: auto;
   overflow: hidden;
   .card {
     overflow: hidden;
-    width: 253px;
     float: left;
-    &:hover{
-      border:2px solid $color;
-      position: relative
+    border: 2px solid #ffffff;
+    padding: 15px;
+    &:hover {
+      border: 2px solid $color;
+      position: relative;
     }
     img {
-      width: 220px;
-      height: 220px;
+      width: 90%;
+      margin: 15px auto;
+      display: block;
+    }
+    .price {
+      color: #c40000;
+      font-size: 16px;
+      span {
+        font-size: 20px;
+      }
+    }
+    .title {
+      a {
+        word-break: break-all;
+      }
+    }
+    .bottom {
+      margin-top: 10px;
+      > span {
+        display: inline-block;
+        height: 28px;
+        line-height: 28px;
+        border: 1px solid #ededed;
+        text-align: center;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 0 8px;
+        .count {
+          color: $color;
+        }
+      }
     }
   }
 }
