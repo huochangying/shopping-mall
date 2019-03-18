@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import Menu from './menu/index'
 import Header from './header/index'
 import Card from './card/index'
+import List from './list/index'
 
 Vue.use(Vuex)
 const state = {
@@ -13,6 +14,7 @@ export default new Vuex.Store({
   modules:{
     Menu,
     Header,
-    Card
+    Card,
+    List
   }
 })

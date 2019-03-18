@@ -12,12 +12,12 @@
               :key="index"
             >
               <Icon :type="item.icon" size="14" class="nav-side-icon"/>
-              <span class="nav-side-item" @click="goList">{{item.option}}</span>
+              <span class="nav-side-item" @click="goList(item.option)">{{item.option}}</span>
               <div class="menu-item">
                 <ul>
                   <li v-for="(item,index) in item.menus" :key="index">
                     <h4>{{item.title}}</h4>
-                    <span v-for="(item,index) in item.tags" :key="index" @click="goList">{{item}}</span>
+                    <span v-for="(item,index) in item.tags" :key="index" @click="goList(item)">{{item}}</span>
                   </li>
                 </ul>
               </div>
@@ -57,8 +57,8 @@ export default {
     hideItem() {
       this.showHide = false;
     },
-    goList() {
-      this.$router.push("/productList");
+    goList(goods) {
+      this.$router.push({path: '/productList', query: {goods: goods}});
     }
   }
 };

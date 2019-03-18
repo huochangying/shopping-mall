@@ -11,7 +11,7 @@ const Card = resolve => require(['@/page/index/children/card'], resolve)
 const Menu = resolve => require(['@/components/menu'], resolve)
 const Header = resolve => require(['@/components/Header'], resolve)
 const Product = resolve => require(['@/page/product/product'], resolve)
-const List = resolve => require(['@/page/product/list/list'], resolve)
+const List = resolve => require(['@/page/product/children/list'], resolve)
 
 Vue.use(Router)
 

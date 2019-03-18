@@ -4,27 +4,28 @@
       <Col :lg="{span:18,offset:3}" :md="{span:24}">
         <Breadcrumb separator=">" class="m-30">
           <BreadcrumbItem to>全部类别</BreadcrumbItem>
-          <BreadcrumbItem to></BreadcrumbItem>
+          <BreadcrumbItem to>{{bread}}</BreadcrumbItem>
         </Breadcrumb>
         <div class="sort">
           <div class="float">销量</div>
           <div class="float">价格</div>
           <div class="float">评论数</div>
-          <Page :current="1" :total="10" simple class="right"/>
+          <Page :current="1" :total="goods.length" simple class="right"/>
         </div>
         <Row class="list">
-          <Col class="card" :md="{span:6}">
-            <img src="../../../assets/img/binggan-1.jpg" alt>
+          <Col class="card" :md="{span:6}" v-for="(item,index) in goods" :key="index">
+            <img :src="getImg(item.img)" alt>
             <div class="price">
               ￥
-              <span>66</span>
+              <span>{{item.price}}</span>
             </div>
             <div class="title">
-              <a href="#">【中粮海外直采】Bourbon波路梦黄油味饼干52g（日本进口 盒）</a>
+              <a href="#">{{item.title}}</a>
             </div>
             <div class="bottom">
-              <span class="float">已评价
-                <span class="count">88</span>
+              <span class="float">
+                已评价
+                <span class="count">{{item.count}}</span>
               </span>
               <span class="right">加入购物车</span>
             </div>
@@ -36,10 +37,35 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+import cache from "@/utils/cache";
 export default {
-  name: "",
   data() {
-    return {};
+    return {
+      bread: ""
+    };
+  },
+  created(){
+this.changeList()
+  },
+  watch: {
+    $route(to,from) {
+      this.changeList()
+    }
+  },
+  computed: {
+    ...mapState({
+      goods: state => state.List.goods
+    })
+  },
+  methods: {
+    ...mapActions(["getList"]),
+    getImg: img => cache.getImgUrl(img),
+    changeList(){
+      let _goods = this.$route.query.goods;
+      this.bread = _goods;
+      this.getList(_goods);
+    }
   }
 };
 </script>
