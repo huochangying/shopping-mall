@@ -1,6 +1,6 @@
 <template>
   <div class="float">
-    <div class="small-card">
+    <div class="small-card" @click="goGoods()">
       <img :src="receiveImg(sendCard.img)" alt>
       <div class="title">{{sendCard.title}}</div>
       <div class="count">
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import cache from '@/utils/cache'
+import cache from "@/utils/cache";
 export default {
   name: "",
   data() {
@@ -23,8 +23,11 @@ export default {
       type: Object
     }
   },
-  methods:{
-    receiveImg: img => cache.getImgUrl(img)
+  methods: {
+    receiveImg: img => cache.getImgUrl(img),
+    goGoods() {
+      cache.goGoods();
+    }
   }
 };
 </script>
@@ -37,7 +40,7 @@ export default {
   border-right: 1px solid #ededed;
   border-bottom: 1px solid #ededed;
   cursor: pointer;
-  &:hover img{
+  &:hover img {
     transform: scale(0.8);
   }
   img {

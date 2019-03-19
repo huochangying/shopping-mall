@@ -9,6 +9,7 @@ const apiUrl = {
   "city": "city.json",
   "card": "card.json",
   "list": "list.json",
+  "goods": "goods.json"
 }
 
 let request = async (type = 'GET', url = '', data = {}) => {

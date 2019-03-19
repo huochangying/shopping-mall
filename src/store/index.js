@@ -4,8 +4,10 @@ import Menu from './menu/index'
 import Header from './header/index'
 import Card from './card/index'
 import List from './list/index'
+import Goods from './goods/index'
 
 Vue.use(Vuex)
+
 const state = {
  
 }
@@ -15,6 +17,7 @@ export default new Vuex.Store({
     Menu,
     Header,
     Card,
-    List
+    List,
+    Goods
   }
 })

@@ -14,7 +14,7 @@
         </div>
         <Row class="list">
           <Col class="card" :md="{span:6}" v-for="(item,index) in goods" :key="index">
-            <img :src="getImg(item.img)" alt>
+            <img :src="getImg(item.img)" @click="goGoods()" alt>
             <div class="price">
               ￥
               <span>{{item.price}}</span>
@@ -65,6 +65,9 @@ export default {
       let _goods = this.$route.query.goods;
       this.bread = _goods;
       this.getList(_goods);
+    },
+    goGoods(){
+      cache.goGoods();
     }
   }
 };
@@ -114,6 +117,7 @@ $color: #43a400;
       width: 90%;
       margin: 15px auto;
       display: block;
+      cursor: pointer;
     }
     .price {
       color: #c40000;

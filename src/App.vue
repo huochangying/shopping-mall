@@ -13,6 +13,9 @@ export default {
 </script>
 
 <style lang='scss'>
+body {
+  user-select: none;
+}
 ul,
 li {
   list-style: none;
@@ -20,7 +23,7 @@ li {
 .float {
   float: left;
 }
-.cursor{
+.cursor {
   cursor: pointer;
 }
 .ivu-card {
