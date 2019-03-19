@@ -45,12 +45,12 @@ export default {
       bread: ""
     };
   },
-  created(){
-this.changeList()
+  created() {
+    this.changeList();
   },
   watch: {
-    $route(to,from) {
-      this.changeList()
+    $route(to, from) {
+      this.changeList();
     }
   },
   computed: {
@@ -61,7 +61,7 @@ this.changeList()
   methods: {
     ...mapActions(["getList"]),
     getImg: img => cache.getImgUrl(img),
-    changeList(){
+    changeList() {
       let _goods = this.$route.query.goods;
       this.bread = _goods;
       this.getList(_goods);
@@ -123,9 +123,9 @@ $color: #43a400;
       }
     }
     .title {
-      a {
-        word-break: break-all;
-      }
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     .bottom {
       margin-top: 10px;

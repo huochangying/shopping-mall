@@ -12,6 +12,7 @@ const Menu = resolve => require(['@/components/menu'], resolve)
 const Header = resolve => require(['@/components/Header'], resolve)
 const Product = resolve => require(['@/page/product/product'], resolve)
 const List = resolve => require(['@/page/product/children/list'], resolve)
+const Goods = resolve => require(['@/page/product/children/goods'], resolve)
 
 Vue.use(Router)
 
@@ -49,6 +50,20 @@ export default new Router({
         'searchBox': SearchBox,
         'menu': Menu,
         default: List
+      }
+    }]
+  },{
+    path: '/goods',
+    components: {
+      default: Product,
+      'header': Header
+    },
+    children: [{
+      path: '',
+      components: {
+        'searchBox': SearchBox,
+        'menu': Menu,
+        default: Goods
       }
     }]
   }]
