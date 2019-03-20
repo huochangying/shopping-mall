@@ -5,7 +5,7 @@
         <div class="search-container">
           <div class="name cursor" @click="goHome">SHOPPING</div>
           <div class="search">
-            <Input search enter-button="搜 索" placeholder=" 狂欢周 满199减100"/>
+            <Input search enter-button="搜 索" placeholder=" 狂欢周 满199减100" ref="input" @click="search()"/>
           </div>
           <div class="name">MALL</div>
         </div>
@@ -18,6 +18,9 @@ export default {
   methods:{
     goHome(){
       this.$router.push('/')
+    },
+    search(){
+      this.$router.push({path: '/productList', query: {goods: this.$refs.input.value}});
     }
   }
 };

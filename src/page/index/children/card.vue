@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import cache from '@/utils/cache'
+import cache from "@/utils/cache";
 export default {
   name: "",
   props: {
@@ -59,6 +59,7 @@ export default {
       type: Object
     }
   },
+  computed: {},
   methods: {
     receiveImg: img => cache.getImgUrl(img)
   }

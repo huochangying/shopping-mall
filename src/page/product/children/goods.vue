@@ -20,8 +20,8 @@
             </div>
             <div class="address">
               <div>送至：
-                <Select v-model="address" size="small" class="select">
-                  <Option
+                <Select  @on-change="value => {addressChange(value)}" size="small" class="select">
+                  <Option 
                     v-for="item in addressList"
                     :value="item.value"
                     :key="item.value"
@@ -42,7 +42,7 @@
               </div>
             </div>
             <div>
-              <div class="shopping cursor">加入购物车</div>
+              <div class="shopping cursor" @click="addCart()">加入购物车</div>
             </div>
           </Col>
         </Row>
@@ -65,15 +65,15 @@ export default {
     ...mapState({
       good: state => state.Goods.good,
       bigImg: state => state.Goods.bigImg,
-      address: state => state.Goods.address,
       addressList: state => state.Goods.addressList,
+      address: state => state.Goods.address,
       num: state => state.Goods.num
     })
   },
   methods: {
-    ...mapActions(["getGood"]),
-    ...mapMutations(["changeImg", "addNum", "removeNum"]),
-    getImg: img => cache.getImgUrl(img)
+    ...mapActions(["getGood", "addCart"]),
+    ...mapMutations(["changeImg", "addNum", "removeNum","addressChange"]),
+    getImg: img => cache.getImgUrl(img),
   }
 };
 </script>

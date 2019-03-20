@@ -26,7 +26,7 @@
                 已评价
                 <span class="count">{{item.count}}</span>
               </span>
-              <span class="right">加入购物车</span>
+              <!-- <span class="right">加入购物车</span> -->
             </div>
           </Col>
         </Row>
@@ -154,7 +154,7 @@ $color: #43a400;
   }
 }
 
-.right {
-  float: right;
-}
+// .right {
+//   float: right;
+// }
 </style>
