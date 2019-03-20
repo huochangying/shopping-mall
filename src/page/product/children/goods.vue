@@ -15,7 +15,7 @@
             <div class="title">{{good.title}}</div>
             <div class="price">
               ￥
-              <span class="count">45</span>
+              <span class="count">{{good.price}}</span>
               <span class="price-title">零售价</span>
             </div>
             <div class="address">
@@ -56,9 +56,7 @@ import { mapState, mapActions, mapMutations } from "vuex";
 import cache from "@/utils/cache";
 export default {
   data() {
-    return {
-      
-    };
+    return {};
   },
   created() {
     this.getGood(this.$route.query.good);
@@ -69,13 +67,13 @@ export default {
       bigImg: state => state.Goods.bigImg,
       address: state => state.Goods.address,
       addressList: state => state.Goods.addressList,
-      num: state => state.Goods.num,
+      num: state => state.Goods.num
     })
   },
   methods: {
     ...mapActions(["getGood"]),
-    ...mapMutations(["changeImg","addNum","removeNum"]),
-    getImg: img => cache.getImgUrl(img),
+    ...mapMutations(["changeImg", "addNum", "removeNum"]),
+    getImg: img => cache.getImgUrl(img)
   }
 };
 </script>

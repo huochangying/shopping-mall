@@ -24,7 +24,7 @@ const mutations = {
     state.num < 9 ? ++state.num : null;
   },
   removeNum() {
-    state.num > 2 ? --state.num : null;
+    state.num > 1 ? --state.num : null;
   }
 };
 const actions = {

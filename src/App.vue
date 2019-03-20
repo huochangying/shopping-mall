@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <router-view name="header"></router-view>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
     <div class="footer">欢迎光临</div>
   </div>
 </template>

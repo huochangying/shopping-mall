@@ -3,11 +3,22 @@ import {
 } from '../../utils/request'
 
 const state = {
-  goods:[]
+  goods: [],
+  bread: '',
+  active: ''
 };
 const mutations = {
   getLists(state, value) {
-    state.goods = value
+    state.goods = value.resquest,
+      state.bread = value.goods
+  },
+  sortPrice: () => {
+    state.active = 'price'
+    state.goods.sort((a, b) => b["price"] - a["price"])
+  },
+  sortComment: () => {
+    state.active = 'comment'
+    state.goods.sort((a, b) => b["count"] - a["count"])
   }
 };
 const actions = {
@@ -17,7 +28,10 @@ const actions = {
     await request('GET', 'list', {
       goods: goods
     }).then(res => {
-      commit('getLists', res)
+      commit('getLists', {
+        goods: goods,
+        resquest: res
+      })
     })
   }
 };

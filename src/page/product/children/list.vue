@@ -7,9 +7,8 @@
           <BreadcrumbItem to>{{bread}}</BreadcrumbItem>
         </Breadcrumb>
         <div class="sort">
-          <div class="float">销量</div>
-          <div class="float">价格</div>
-          <div class="float">评论数</div>
+          <div :class="['float',active == 'price'?'active':'' ]" @click="sortPrice()">价格</div>
+          <div :class="['float',active == 'comment'?'active':'' ]" @click="sortComment()">评论数</div>
           <Page :current="1" :total="goods.length" simple class="right"/>
         </div>
         <Row class="list">
@@ -37,36 +36,38 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapMutations, mapActions } from "vuex";
 import cache from "@/utils/cache";
 export default {
   data() {
-    return {
-      bread: ""
-    };
+    return {};
   },
   created() {
     this.changeList();
   },
   watch: {
     $route(to, from) {
-      this.changeList();
+      if (to.path == "/productList") {
+        this.changeList();
+      }
     }
   },
   computed: {
     ...mapState({
-      goods: state => state.List.goods
+      goods: state => state.List.goods,
+      bread: state => state.List.bread,
+      active: state => state.List.active
     })
   },
   methods: {
+    ...mapMutations(["sortPrice", "sortComment"]),
     ...mapActions(["getList"]),
     getImg: img => cache.getImgUrl(img),
     changeList() {
       let _goods = this.$route.query.goods;
-      this.bread = _goods;
       this.getList(_goods);
     },
-    goGoods(){
+    goGoods() {
       cache.goGoods();
     }
   }
@@ -85,6 +86,11 @@ $color: #43a400;
   background: #f5f5f5;
   padding: 10px;
   overflow: hidden;
+  .active {
+    position: relative;
+    color: $color;
+    border-color: $color;
+  }
   div {
     width: 52px;
     height: 24px;
@@ -95,9 +101,7 @@ $color: #43a400;
     background: #fff;
     cursor: pointer;
     &:hover {
-      position: relative;
-      color: $color;
-      border-color: $color;
+      @extend .active;
     }
   }
 }
