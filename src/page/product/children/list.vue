@@ -154,7 +154,7 @@ $color: #43a400;
   }
 }
 
-// .right {
-//   float: right;
-// }
+.right {
+  float: right;
+}
 </style>
