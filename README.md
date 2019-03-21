@@ -1,6 +1,12 @@
-# shopping-mall
+Shopping Mall
 
-> A Vue.js project
+vue + vue-router + vuex + iview + axios
+
+参考网上的电子商场做的一个项目，实现首页、搜索、商品列表、商品详情、添加购物车等功能
+
+
+
+
 
 ## Build Setup
 
@@ -26,5 +32,3 @@ npm run e2e
 # run all tests
 npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
