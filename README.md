@@ -1,6 +1,6 @@
-Shopping Mall
+##Shopping Mall
 
-vue + vue-router + vuex + iview + axios
+#vue + vue-router + vuex + iview + axios
 
 参考网上的电子商场做的一个项目，实现首页、搜索、商品列表、商品详情、添加购物车等功能
 
